@@ -31,7 +31,7 @@ class ApplyLayout:
             for i, c in enumerate(node.children):
                 child_y = center_y - SUB_TOPIC_BOX_HEIGHT / 2
                 self.layout_node(c, current_x, child_y)
-                current_x += c.required_width
+                current_x += SUB_TOPIC_BOX_WIDTH + SPACING
 
         elif node.level == 1 and node.children:
             top_center_x = node.shape.center[0] + DETAIL_SPACING
