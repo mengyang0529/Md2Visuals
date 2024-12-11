@@ -60,7 +60,3 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 ---
 
 Feel free to reach out if you encounter any issues or have suggestions for improvements!
-
-# Md2Visuals
-# md2visuals
-# md2visuals
