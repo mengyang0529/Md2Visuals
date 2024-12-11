@@ -4,6 +4,8 @@ from core.geometry import *
 class MeasureLayout:
     def __init__(self):
         self.total_width_list = {}
+        self.min_x_list = {}
+        self.max_x_list = {}
         
     def measure_node(self, node, idx):
         # Determine basic size
@@ -29,13 +31,20 @@ class MeasureLayout:
             total_width = sum(c.required_width + DETAIL_SPACING for c in node.children) - DETAIL_SPACING
 
         self.total_width_list[idx] = max(self.total_width_list[idx], total_width)
-        
 
+    def traverse(self, node):
+        for child in node.children:
+            child.required_width = node.required_width
+            self.traverse(child)
+   
     def measure(self, root):
         # Start measuring from the root node
         for idx, node in enumerate(root.children):
-            self.total_width_list[idx] = 0
+            self.total_width_list[idx] = SUB_TOPIC_BOX_WIDTH
+            self.min_x_list[idx] = 16
+            self.max_x_list[idx] = 0
+            node.x = 0
             self.measure_node(node, idx)
             node.required_width = self.total_width_list[idx]
-            
-        return root  
+            self.traverse(node)
+        return root

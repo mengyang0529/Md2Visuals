@@ -20,7 +20,7 @@ class ApplyLayout:
             w, h = SUB_TOPIC_BOX_WIDTH, SUB_TOPIC_BOX_HEIGHT
         else:
             w, h = DETAIL_BOX_WIDTH, DETAIL_BOX_HEIGHT
-
+    
         node.shape = Box(x, y, w, h)
         # Add this node to the placed list and initialize as unshifted
         self.placed_nodes[node.id] = {"node": node}
@@ -31,24 +31,21 @@ class ApplyLayout:
             center_x = node.shape.center[0]
             num_children = len(node.children)
             
-            total_width = 0
-            for i, c in enumerate(node.children):
-                total_width += c.required_width
-
-            start_x = center_x - total_width / 2
+            total_width = sum(c.required_width + SPACING for c in node.children) - SPACING
+            start_x = center_x - total_width/2  
             current_x = start_x
             for i, c in enumerate(node.children):
-                child_x = current_x
+                child_x = current_x + c.required_width / 2 - SUB_TOPIC_BOX_WIDTH / 2
                 child_y = current_y
                 self.layout_node(c, child_x, child_y)
-                current_x += c.required_width + SPACING
+                current_x += c.required_width + SPACING 
         else:
             current_y = node.shape.bottom + SPACING  # vertical direction
             center_x = node.shape.center[0]
             num_children = len(node.children)
             
             total_width = (num_children - 1) * DETAIL_SPACING + num_children * DETAIL_BOX_WIDTH
-            start_x = center_x - total_width / 2
+            start_x = center_x - total_width / 2 
              
             current_x = start_x
             for i, c in enumerate(node.children):

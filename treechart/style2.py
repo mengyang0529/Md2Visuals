@@ -36,6 +36,7 @@ class TreeChartStyle2:
             if not queue:
                 break
             node = queue.popleft()
+         
             DrawingBox(slide, node, layout_boxes[node.id], node.level)
             for i in range(len(layout_lines[node.id])):
                 DrawingLine(slide, node, layout_lines[node.id][i][0], 
