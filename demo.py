@@ -1,8 +1,9 @@
 from timeline.timeline import Timeline
+from treechart.treechart import TreeChart
 import argparse
 
 def main(args):
-    t = Timeline.Style2(args.input)
+    t = TreeChart.Style1(args.input)
     t.save_ppt(args.output)
 
 if __name__ == '__main__':
