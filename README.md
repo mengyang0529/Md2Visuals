@@ -27,6 +27,7 @@ This project leverages the `python-pptx` library to create PowerPoint presentati
 
 1. Create a Markdown file (e.g., `example.md`) with the desired content structure:
    - [timeline example](doc/timeline.md)
+   - [treechart example](doc/treechart.md)
 
 2. Run the script to generate the PowerPoint file:
 
