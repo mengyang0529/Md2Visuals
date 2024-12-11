@@ -1,5 +1,4 @@
-   <span style="color:red;">.Note: The first level of indentation is used to 
-      define the hierarchy of the mind map.</span>
+   ### Note: The first level of indentation is used to define the hierarchy of the mind map.
          And there is only one level of MainTopic.
    ```markdown
       - MainTopic    
