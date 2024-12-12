@@ -30,15 +30,13 @@ class ApplyLayout:
             current_x = node.shape.right + SPACING  # horizontal direction
             num_children = len(node.children)
             
-            total_height = 0
-            for i, c in enumerate(node.children):
-                total_height += c.required_height
+            total_height = sum(c.required_height + SPACING for c in node.children) - SPACING
 
             start_y = center_y - total_height / 2
             current_y = start_y
             for i, c in enumerate(node.children):
                 child_x = current_x
-                child_y = current_y
+                child_y = current_y + c.required_height / 2 - SUB_TOPIC_BOX_HEIGHT / 2
                 self.layout_node(c, child_x, child_y)
                 current_y += c.required_height + SPACING
 
