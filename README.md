@@ -17,11 +17,6 @@ This project leverages the `python-pptx` library to create PowerPoint presentati
    cd md2visuals
    ```
 
-2. Install the required dependencies:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
 
 ## Usage
 
