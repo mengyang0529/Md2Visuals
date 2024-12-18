@@ -16,7 +16,7 @@ This project leverages the `python-pptx` library to create PowerPoint presentati
    git clone https://github.com/mengyang0529/md2visuals.git
    cd md2visuals
    ```
-
+   
 ## Usage
 
 1. Create a Markdown file (e.g., `example.md`) with the desired content structure:
