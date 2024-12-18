@@ -17,12 +17,6 @@ This project leverages the `python-pptx` library to create PowerPoint presentati
    cd md2visuals
    ```
 
-2. Install the required dependencies:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
 ## Usage
 
 1. Create a Markdown file (e.g., `example.md`) with the desired content structure:
@@ -32,7 +26,7 @@ This project leverages the `python-pptx` library to create PowerPoint presentati
 2. Run the script to generate the PowerPoint file:
 
    ```bash
-   python demo.py -i example.md -o output.pptx
+   python demo.py -m treechart -s Style2 --input example.md --output output.pptx
    ```
 
 3. Open the generated `output.pptx` file in PowerPoint to view your mind map.
